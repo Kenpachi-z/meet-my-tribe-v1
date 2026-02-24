@@ -1,0 +1,15 @@
+﻿// path: /data/partners.json
+[
+  {
+    "id": "1",
+    "nom": "Mairie de Paris",
+    "logo_url": "/images/partenaires/mairie-paris.png",
+    "type": "global"
+  },
+  {
+    "id": "2",
+    "nom": "Institut Français",
+    "logo_url": "/images/partenaires/institut-francais.png",
+    "type": "global"
+  }
+]

@@ -1,0 +1,17 @@
+﻿[
+  {
+    "id": "1",
+    "label": "Jeunes accompagnés",
+    "valeur": "150+"
+  },
+  {
+    "id": "2",
+    "label": "Éditions réalisées",
+    "valeur": "5"
+  },
+  {
+    "id": "3",
+    "label": "Pays impliqués",
+    "valeur": "3"
+  }
+]
