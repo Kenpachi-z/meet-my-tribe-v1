@@ -1,12 +1,14 @@
-﻿// path: /data/editions.json
-[
+﻿[
   {
     "id": "1",
     "slug": "paris-2023",
     "titre": "Tribu Urbaine - Paris",
     "annee": 2023,
     "ville": "Paris",
-    "mediums": ["Photographie", "Street Art"],
+    "mediums": [
+      "Photographie",
+      "Street Art"
+    ],
     "image_url": "/images/editions/paris-2023.jpg",
     "image_alt": "Jeunes participants peignant une fresque murale à Paris",
     "lien_helloasso": "https://www.helloasso.com/associations/meet-my-tribe/formulaires/1"
@@ -17,7 +19,10 @@
     "titre": "Tribu Urbaine - Dakar",
     "annee": 2024,
     "ville": "Dakar",
-    "mediums": ["Vidéo", "Danse"],
+    "mediums": [
+      "Vidéo",
+      "Danse"
+    ],
     "image_url": "/images/editions/dakar-2024.jpg",
     "image_alt": "Groupe de danseurs urbains en pleine performance à Dakar"
   }

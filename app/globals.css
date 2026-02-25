@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Typographie */
+    --font-kanit: 'Kanit', sans-serif;
+    --font-noto: 'Noto Sans', sans-serif;
+
+    /* Typographie - Échelle (Desktop base) */
+    --text-h1: 4.75rem;
+    /* 76pt */
+    --text-h2: 2.94rem;
+    /* 47pt */
+    --text-h3: 1.81rem;
+    /* 29pt */
+    --text-body: 1.125rem;
+    /* 18pt */
+    --leading-body: 2.375rem;
+    /* 38pt */
+
+    /* Typographie - Poids */
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+
+    /* Couleurs */
+    --color-cream: #F5EFE6;
+    --color-sand: #D9B6A3;
+    /* ⚠ Ratio insuffisant pour texte sur blanc */
+    --color-terracotta: #BF754B;
+    /* Mots-clés accent, Boutons secondaires */
+    --color-ocre: #A6583C;
+    /* Accents, hover buttons */
+    --color-chocolate: #734434;
+    /* Titres secondaires H2/H3 */
+    --color-dark: #732F17;
+    /* Textes principaux, H1, CTA "Faire un don" */
+    --color-white: #FFFFFF;
+  }
+
+  /* Responsive Typographie (Mobile Base) */
+  @media (max-width: 768px) {
+    :root {
+      --text-h1: 2.5rem;
+      --text-h2: 2rem;
+      --text-h3: 1.5rem;
+      --text-body: 1rem;
+      --leading-body: 1.75rem;
+    }
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-dark);
+    font-family: var(--font-noto);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+  }
+
+  h1 {
+    font-family: var(--font-kanit);
+    font-size: var(--text-h1);
+    font-weight: var(--font-weight-black);
+    color: var(--color-dark);
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-family: var(--font-kanit);
+    font-size: var(--text-h2);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-chocolate);
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-family: var(--font-kanit);
+    font-size: var(--text-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-chocolate);
+    line-height: 1.3;
+  }
+}
+
+@layer utilities {
+  .text-accent {
+    color: var(--color-terracotta);
+  }
+}

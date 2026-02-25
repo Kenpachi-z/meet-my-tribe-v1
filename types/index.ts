@@ -1,6 +1,6 @@
-﻿1. Le Contrat de Données (TypeScript)
-Ce fichier est le pont entre Gemini (Front) et Claude (Back). Il garantit que tout le monde parle la même langue.
-// path: /types/index.ts
+﻿/**
+ * @file Contrat de données (TypeScript)
+ */
 
 
 /**
