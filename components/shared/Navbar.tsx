@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -47,11 +48,18 @@ export function Navbar() {
             )}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-20">
-                    {/* Logo */}
-                    <div className="flex-shrink-0 flex items-center">
-                        <Link href="/" className="font-title text-2xl font-black text-mmt-chocolat tracking-tight">
-                            Meet My Tribe
+                <div className="flex justify-between items-center h-20">
+                    {/* Logo à gauche, avec effet à cheval via translate-y */}
+                    <div className="flex-shrink-0 flex items-center relative z-50 translate-y-6">
+                        <Link href="/" className="flex items-center">
+                            <Image
+                                src="/logo_site_meet_my_tribe.jpg"
+                                alt="Logo Meet My Tribe"
+                                width={112}
+                                height={112}
+                                className="w-24 h-24 md:w-28 md:h-28 object-contain"
+                                priority
+                            />
                         </Link>
                     </div>
 

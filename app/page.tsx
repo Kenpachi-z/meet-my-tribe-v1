@@ -43,27 +43,41 @@ export default function Home() {
 }
 
 function HeroSection() {
+    const [isVideoPlaying, setIsVideoPlaying] = useState(true);
+
     return (
-        <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-            {/* Vidéo de fond (placeholder image si pas de vidéo uploadée) */}
-            <div className="absolute inset-0 w-full h-full z-0 bg-mmt-chocolat">
+        <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-mmt-chocolat">
+            {/* 1. Couche du fond (z-0) : Image statique */}
+            <div className="absolute inset-0 w-full h-full z-0">
                 <Image
-                    src="/images/placeholder-hero.jpg" // À remplacer par la vraie image/vidéo
+                    src="/background_accueil.jpg"
                     alt="Jeunes en train de créer collectivement"
                     fill
-                    className="object-cover opacity-60"
+                    className="object-cover"
                     priority
                 />
             </div>
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-mmt-chocolat/80 via-mmt-chocolat/40 to-transparent z-10"></div>
+            {/* 2. Couche vidéo (z-10) : Vidéo qui disparaît en fondu à la fin */}
+            <video
+                src="/Two_people_holding_hands_898cff8497.mp4"
+                autoPlay
+                muted
+                playsInline
+                onEnded={() => setIsVideoPlaying(false)}
+                className={`absolute inset-0 object-cover w-full h-full z-10 transition-opacity duration-1000 ${isVideoPlaying ? "opacity-100" : "opacity-0"
+                    }`}
+            />
 
-            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+            {/* 3. Couche RGAA (z-20) : Overlay dégradé sombre pour garantir le contraste */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-20"></div>
+
+            {/* 4. Couche Contenu (z-30) */}
+            <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
                 <h1 className="text-4xl md:text-5xl lg:text-7xl font-title font-black text-white mb-6 drop-shadow-lg leading-tight animate-in fade-in slide-in-from-bottom-8 duration-1000">
                     Espaces de Création<br />Collective
                 </h1>
-                <p className="text-xl md:text-2xl text-mmt-sable font-medium mb-10 max-w-3xl drop-shadow-md animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
+                <p className="text-xl md:text-2xl text-white font-medium mb-10 max-w-3xl drop-shadow-md animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
                     Pour les jeunes en France et en Afrique.<br className="hidden sm:block" /> Rejoignez le mouvement Tribal.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
